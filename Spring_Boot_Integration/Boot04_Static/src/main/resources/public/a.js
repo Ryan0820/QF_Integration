@@ -1,0 +1,2 @@
+alert("hell");
+window.print();

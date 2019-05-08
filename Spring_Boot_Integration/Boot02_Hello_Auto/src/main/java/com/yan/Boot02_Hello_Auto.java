@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 //@EnableAutoConfiguration(exclude = {AopAutoConfiguration.class} )
 @SpringBootApplication
+//@ComponentScan("com.yan.controller")
 public class Boot02_Hello_Auto {
     public static void main(String[] args) {
         SpringApplication.run(Boot02_Hello_Auto.class);

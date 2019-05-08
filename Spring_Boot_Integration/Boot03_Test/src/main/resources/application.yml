@@ -1,0 +1,5 @@
+logging:
+  #level:
+    #root: info
+  #file: /log.log
+  #config: log4j.properties

@@ -1,4 +1,10 @@
 server:
-  port: 8088
+  port: 8080
   servlet:
-    context-path: /yan
+    context-path:
+book:
+  author: Yan
+  name: JavaYan
+spring:
+  profiles:
+    active: sit

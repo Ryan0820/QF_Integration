@@ -11,6 +11,37 @@
     <modules>
         <module>Boot01_Hello</module>
         <module>Boot02_Hello_Auto</module>
+        <module>Boot03_Test</module>
+        <module>Boot04_Static</module>
+        <module>Boot05_FastJson</module>
+        <module>Boot06_Filter</module>
+        <module>Boot07_GlobalExceptionHandler</module>
+        <module>Boot08_Asvnc</module>
+        <module>Boot09_JSP</module>
+        <module>Boot10_Freemarker</module>
+        <module>Boot11_Thymeleaf</module>
+        <module>Boot12_QuartZ</module>
+        <module>Boot13_JDBCTemplate</module>
+        <module>Boot14_Mybatis_Anno</module>
+        <module>Boot15_Mybatis_XML</module>
+        <module>Boot16_MultipleDataSource</module>
+        <module>Boot17_Transaction</module>
+        <module>Boot18_JPA_Hibnate</module>
+        <module>Boot19_Mail</module>
+        <module>Boot20_FileUp</module>
+        <module>Boot21_MoneyFileUp</module>
+        <module>Boot22_Neo4J</module>
+        <module>Boot23_Redis_Stand_alone</module>
+        <module>Boot24_Redis_Cluster</module>
+        <module>Boot25_MongoDB</module>
+        <module>Boot26_ActiveMQ</module>
+        <module>Boot27_RabbitMQ</module>
+        <module>Boot28_KafKa</module>
+        <module>Boot29_Solr</module>
+        <module>Boot30_ElasticSearch</module>
+        <module>Boot31_WebSocket</module>
+        <module>Boot32_AngularJS</module>
+        <module>Boot33_Swagger2</module>
     </modules>
 
     <properties>
@@ -32,9 +63,22 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.1.4.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
@@ -42,10 +86,14 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-           <!-- <plugin>
-                <groupId>org.apacher.maven.plugins</groupId>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-            </plugin>-->
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
