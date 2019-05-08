@@ -12,6 +12,7 @@ public class User {
     private String name;
     private Integer age;
     private String sex;
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date birthday;
     private Long phone;
     private String address;

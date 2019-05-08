@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin//跨域
+@RequestMapping("/user")
 public class IControllerImpl implements IController {
 
 
@@ -16,38 +18,67 @@ public class IControllerImpl implements IController {
     private IService service;
 
 
+    /**
+     * 增加
+     *
+     * @param user
+     */
     @Override
-    //@RequestMapping(value = "/findAll/{page}/{size}", method = RequestMethod.GET)
-    @GetMapping("/findAll/{page}/{size}")
+    @RequestMapping(method = RequestMethod.POST)
+    public void addUser(@RequestBody User user) {
+        service.addUser(user);
+    }
+
+    /**
+     * 按照UID删除
+     *
+     * @param uid
+     */
+    @Override
+    @RequestMapping(value = "/{uid}",method = RequestMethod.DELETE)
+    public void delUser(@PathVariable Long uid) {
+        service.delUser(uid);
+    }
+
+    /**
+     * 更新修改
+     *
+     * @param user
+     */
+    @Override
+    @RequestMapping(method = RequestMethod.PUT)
+    public void updateUser(@RequestBody User user) {
+        service.updateUser(user);
+    }
+
+    /**
+     * 按照UID查询
+     *
+     * @param uid
+     * @return
+     */
+    @Override
+    @RequestMapping(value = "/{uid}",method = RequestMethod.GET)
+    public User findById(@PathVariable Long uid) {
+        return service.findById(uid);
+    }
+
+    /**
+     * 全部查询
+     *
+     * @param page 页码
+     * @param size 条数
+     * @return
+     */
+    @Override
+    @GetMapping("/{page}/{size}")
     public List<User> findAll(@PathVariable(value = "page") int page, @PathVariable(value = "size") int size) {
         return service.findAll(page, size);
     }
 
-    @Override
-    @RequestMapping(value = "/delUser/{uid}",method = RequestMethod.DELETE)
-    public void delUser(String uid) {
-
-        service.delUser(uid);
-    }
 
     @Override
-    @RequestMapping(value = "/updateFindbyid/{uid}",method = RequestMethod.GET)
     public User updateFindbyid(String uid) {
-        return service.updateFindbyid(uid);
-    }
-
-    @Override
-    public void updatUser(User User) {
-
-    }
-
-    @Override
-    public void addUser(User User) {
-
-    }
-
-    @Override
-    public User findbyid(String Userid) {
         return null;
     }
 
@@ -57,7 +88,11 @@ public class IControllerImpl implements IController {
     }
 
     @Override
-    public User UserLogin(String Userid, String Username) {
+    public User UserLogin(String uid, String Username) {
         return null;
     }
+
+
+
+
 }

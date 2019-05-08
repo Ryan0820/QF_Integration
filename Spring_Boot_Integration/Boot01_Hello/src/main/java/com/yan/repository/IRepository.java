@@ -1,4 +1,4 @@
-package com.yan.dao;
+package com.yan.repository;
 
 import com.yan.model.User;
 
@@ -8,7 +8,8 @@ import java.util.List;
  * @author Yan
  *  持久层接口
  */
-public interface IDao {
+//@Repository
+public interface IRepository {
     /**
      * 增加
      *

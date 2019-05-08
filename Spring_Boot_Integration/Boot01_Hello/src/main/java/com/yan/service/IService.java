@@ -6,22 +6,53 @@ import com.yan.model.User;
 import java.util.List;
 
 /**
- *
+ *  服务接口
  */
 public interface IService {
-    public List<User> findAll(int page, int size);
+    /**
+     * 增加
+     *
+     * @param user
+     */
+    void addUser(User user);
 
-    void delUser(String id);
 
-    User updateFindbyid(String Userid);
+    /**
+     * 按照UID删除
+     *
+     * @param uid
+     */
+    void delUser(Long uid);
 
-    void updatUser(User User);
+    /**
+     * 更新修改
+     *
+     * @param user
+     */
+    void updateUser(User user);
 
-    void addUser(User User);
+    /**
+     * 按照UID查询
+     *
+     * @param uid
+     * @return
+     */
+    User findById(Long uid);
 
-    User findbyid(String Userid);
+    /**
+     * 全部查询
+     *
+     * @param page 页码
+     * @param size 条数
+     * @return
+     */
+    List<User> findAll(int page, int size);
+
+
+    User updateFindbyid(String uid);
 
     void daySubtract(User user);
 
-    User UserLogin(String Userid, String Username);
+    User UserLogin(String uid, String Username);
+
 }
