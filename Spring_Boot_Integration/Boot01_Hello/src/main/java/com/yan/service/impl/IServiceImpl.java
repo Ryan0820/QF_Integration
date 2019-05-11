@@ -7,7 +7,6 @@ import com.yan.service.IService;
 import com.yan.util.IdWorker;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -31,7 +30,6 @@ public class IServiceImpl implements IService {
         IdWorker idWorker = new IdWorker();
         long uid = idWorker.nextId();
         user.setUid(uid);
-        user.setBirthday(new Date());
         dao.addUser(user);
     }
 
