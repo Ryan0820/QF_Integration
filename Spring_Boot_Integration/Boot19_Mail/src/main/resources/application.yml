@@ -1,0 +1,12 @@
+spring:
+  mail:
+    host: smtp.163.com #smtp.qq.com
+    username: 18521055369@163.com
+    password: qq2393059399 #授权码
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
